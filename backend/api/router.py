@@ -1,41 +1,27 @@
-# """
-# Central API router for Luminara
-# """
-
-# from fastapi import APIRouter
-# from api.agent_routes import router as agent_router
-
-# # Create main router
-# router = APIRouter()
-
-# # Register agent routes
-# router.include_router(agent_router, prefix="/agent")
-
-
-# @router.get("/status")
-# def system_status():
-#     return {
-#         "system": "Luminara Security Platform",
-#         "status": "operational"
-#     }
-
 """
 Central API router for Luminara
 """
 
 from fastapi import APIRouter
 from api.agent_routes import router as agent_router
+from api.phishing_routes import router as phishing_router
 
-# Create main router
+# --- Step 1: Create the main router ---
 router = APIRouter()
 
-# Health check
+# --- Step 2: Health check ---
 @router.get("/status")
 def system_status():
     return {
         "system": "Luminara Security Platform",
-        "status": "operational"
+        "status": "operational",
+        "version": "1.0"
     }
 
-# Register agent routes
+# --- Step 3: Register other routers ---
+
+# Agent routes
 router.include_router(agent_router, prefix="/agent")
+
+# Phishing detection routes
+router.include_router(phishing_router, prefix="/phishing")
