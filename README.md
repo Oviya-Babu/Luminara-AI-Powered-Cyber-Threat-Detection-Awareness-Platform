@@ -2,7 +2,7 @@
 
 > **"See the threat before it sees you."**
 
-Luminara is a mobile-first AI cybersecurity assistant that helps everyday users detect phishing messages, deepfake media, and malicious QR codes — while building cybersecurity awareness through daily learning streaks.
+Luminara is a mobile-first AI cybersecurity assistant that helps everyday users detect phishing messages, deepfake media — while building cybersecurity awareness through daily learning streaks.
 
 ---
 
@@ -20,15 +20,13 @@ luminara/
 │   │   │   ├── ai_agent/         # Input classifier + router
 │   │   │   ├── phishing/         # BERT phishing detection
 │   │   │   ├── deepfake/         # AASIST audio + GenConViT video
-│   │   │   ├── qr_scanner/       # QR decode + VirusTotal check
-│   │   │   ├── notification/     # Push notification monitor
 │   │   │   └── awareness/        # Lessons + quiz engine
 │   │   ├── middleware/           # Auth, rate limiting, CORS
 │   │   └── utils/                # Shared helpers
 │   ├── alembic/                  # DB migrations
 │   └── tests/                    # Unit + integration tests
 │
-├── mobile/           # Flutter mobile app (iOS + Android)
+├── mobile/           # react native mobile app (iOS + Android)
 │   ├── lib/
 │   │   ├── core/                 # Theme, constants, network, utils
 │   │   ├── features/             # One folder per app feature
@@ -51,7 +49,7 @@ luminara/
 
 | Layer | Technology |
 |---|---|
-| Mobile | Flutter (Dart) |
+| Mobile | react native |
 | Backend | Python 3.11 + FastAPI |
 | Database | PostgreSQL via Supabase |
 | Auth | JWT (RS256) + Supabase Auth |
@@ -73,11 +71,9 @@ luminara/
 | 3 | AI Security Agent | ⏳ |
 | 4 | Phishing Detection Module | ⏳ |
 | 5 | Deepfake Detection Module | ⏳ |
-| 6 | QR Code Threat Scanner | ⏳ |
-| 7 | Notification Listener Integration | ⏳ |
-| 8 | Cybersecurity Awareness Learning | ⏳ |
-| 9 | Daily Streak Gamification | ⏳ |
-| 10 | Mobile UI Integration | ⏳ |
+| 6 | Cybersecurity Awareness Learning | ⏳ |
+| 7 | Daily Streak Gamification | ⏳ |
+| 8 | Mobile UI Integration | ⏳ |
 
 ---
 
@@ -97,8 +93,10 @@ uvicorn app.main:app --reload
 
 # 3. Mobile setup (separate terminal)
 cd ../mobile
-flutter pub get
-flutter run
+React Native
+Download Expo Go from Playstore
+npm install
+
 ```
 
 ---
